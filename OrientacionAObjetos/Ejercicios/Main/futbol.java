@@ -1,4 +1,4 @@
-import OrientacionAObjetos.Clases.*;
+import Ejercicios.Clases.*;
 
 import java.util.Calendar;
 import java.util.Date;

@@ -1,4 +1,4 @@
-import OrientacionAObjetos.Clases.*;
+import Ejercicios.Clases.*;
 import utilidades.Enumerados.COLORES;
 
 public class MainCoordenadas{

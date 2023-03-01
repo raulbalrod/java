@@ -1,5 +1,5 @@
-package OrientacionAObjetos.Clases;
-import OrientacionAObjetos.Clases.*;
+package Ejercicios.Clases;
+import Ejercicios.Clases.*;
 
 public class Tienda{
 	public Mascota[] Mascotas;

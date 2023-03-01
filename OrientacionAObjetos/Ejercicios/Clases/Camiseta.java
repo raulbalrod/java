@@ -1,4 +1,4 @@
-package OrientacionAObjetos.Clases;
+package Ejercicios.Clases;
 
 public class Camiseta {
     public String Color;

@@ -1,5 +1,5 @@
-package OrientacionAObjetos.Clases;
-import OrientacionAObjetos.Clases.*;
+package Ejercicios.Clases;
+import Ejercicios.Clases.*;
 
 public class Persona {
     public String Nombre;

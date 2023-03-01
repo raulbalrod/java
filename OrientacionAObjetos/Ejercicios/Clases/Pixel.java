@@ -1,4 +1,4 @@
-package OrientacionAObjetos.Clases;
+package Ejercicios.Clases;
 import utilidades.*;
 
 public class Pixel{

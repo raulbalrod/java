@@ -1,4 +1,4 @@
-import OrientacionAObjetos.Clases.*;
+import Ejercicios.Clases.*;
 
 public class camisetas{
 	public static void main(String[] args){

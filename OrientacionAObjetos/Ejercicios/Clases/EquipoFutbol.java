@@ -1,4 +1,4 @@
-package OrientacionAObjetos.Clases;
+package Ejercicios.Clases;
 
 public class EquipoFutbol {
     private String Nombre;   

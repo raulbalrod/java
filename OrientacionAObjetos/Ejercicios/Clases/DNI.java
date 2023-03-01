@@ -1,4 +1,4 @@
-package OrientacionAObjetos.Clases;
+package Ejercicios.Clases;
 
 public class DNI {
     public int numero;

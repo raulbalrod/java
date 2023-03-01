@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-import OrientacionAObjetos.Clases.*;
+import Ejercicios.Clases.*;
 
 public class AutoPet{
 	public static void main(String[] args){

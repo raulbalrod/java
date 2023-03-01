@@ -1,7 +1,7 @@
-package OrientacionAObjetos.Clases;
+package Ejercicios.Clases;
 
 import java.util.ArrayList;
-import OrientacionAObjetos.*;
+import Ejercicios.*;
 
 public class Equipo{
 	public String Nombre;

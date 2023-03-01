@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-import OrientacionAObjetos.Clases.*;
+import Ejercicios.Clases.*;
 
 public class MainCartas {
     public static void main(String[] args) {

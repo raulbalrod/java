@@ -1,6 +1,6 @@
-package OrientacionAObjetos.Clases;
+package Ejercicios.Clases;
 
-import OrientacionAObjetos.Clases.*;
+import Ejercicios.Clases.*;
 import java.util.ArrayList;
 import java.util.Collections;
 

@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-import OrientacionAObjetos.Clases.*;
+import Ejercicios.Clases.*;
 
 public class BlackJack{
     public static void main(String[] args) {
