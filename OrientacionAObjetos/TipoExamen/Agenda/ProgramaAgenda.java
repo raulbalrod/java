@@ -13,7 +13,5 @@ public class ProgramaAgenda {
         contactos.add(contact1);
         contactos.add(contact2);
         contactos.add(contact3);
-
-        System.out.println(contactos.listarContactos());
     }
 }
