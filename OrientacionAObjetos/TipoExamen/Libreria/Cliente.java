@@ -52,13 +52,13 @@ public class Cliente {
 
     // ToString
         // Imprimir lista de libros de un cliente
-        /*
-            public void ImprimirListaLibros() {
-                for(Libro l : libros) {
-                    System.out.println(l);
+            /*
+                public void ImprimirListaLibros() {
+                    for(Libro l : libros) {
+                        System.out.println(l);
+                    }
                 }
-            }
-        */
+            */
 
     @Override
     public String toString() {
