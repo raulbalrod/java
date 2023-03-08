@@ -53,18 +53,22 @@ public class Tienda {
         }
     }
 
-    public void listar(int opcion) {
+    public void listar(int opcion) {    
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Introduzca el término de búsqueda:");
+        String termino = sc.nextLine();
+
         System.out.println("Libros que coinciden con la búsqueda:");
-
         for (Libro l : libros) {
-            if (opcion == 1) {
-                System.out.println(l.getNombre());
+            if (opcion == 1 && l.getNombre().toLowerCase().contains(termino.toLowerCase())) {
+                System.out.println("- " + l.getNombre());
 
-            } else if (opcion == 2) {
-                System.out.println(l.getAutor());
-
-            } else if (opcion == 3) {
-                System.out.println(l.getCategoria());
+            } else if (opcion == 2 && l.getAutor().toLowerCase().contains(termino.toLowerCase())) {
+                System.out.println("- " + l.getNombre());
+                
+            } else if (opcion == 3 && l.getCategoria().toLowerCase().contains(termino.toLowerCase())) {
+                System.out.println("- " + l.getNombre());
             }
         }
     }
@@ -87,9 +91,9 @@ public class Tienda {
         System.out.println("Introduzca la cantidad de existencias del libro:");
         int cantidad = sc.nextInt();
 
-        Libro libro = new Libro(titulo, autor, categoria, precio, cantidad);
+        Libro newLibro = new Libro(titulo, autor, categoria, precio, cantidad);
 
-        libros.add(libro);
+        libros.add(newLibro);
     }
 
     public void addCliente() {
@@ -101,9 +105,9 @@ public class Tienda {
         System.out.println("Introduzca la cantidad de dinero del cliente:");
         double dinero = sc.nextDouble();
         
-        Cliente cliente = new Cliente(nombre, dinero, libros);
+        Cliente newCliente = new Cliente(nombre, dinero, libros);
 
-        clientes.add(cliente);
+        clientes.add(newCliente);
     }
 
     public void venderLibro(Libro libro, Cliente cliente) {

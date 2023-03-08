@@ -9,10 +9,10 @@ public class Main {
 
         ArrayList<Libro> libros = new ArrayList<Libro>();
 
-        Libro libro1 = new Libro("nombre1", "autor1", "categoria1", 12.43, 5);
-        Libro libro2 = new Libro("nombre2", "autor2", "categoria2", 9.76, 1);
-        Libro libro3 = new Libro("nombre3", "autor3", "categoria3", 16.21, 9);
-        Libro libro4 = new Libro("nombre4", "autor4", "categoria4", 6.75, 15);
+        Libro libro1 = new Libro("ESDLA", "Sergio", "Literatura", 12.43, 5);
+        Libro libro2 = new Libro("El hobbit", "Kun", "Filosofia", 9.76, 1);
+        Libro libro3 = new Libro("La historia", "Leo", "Literatura", 16.21, 9);
+        Libro libro4 = new Libro("The end", "Alberto", "Filosofia", 6.75, 15);
 
         libros.add(libro1);
         libros.add(libro2);
@@ -21,17 +21,17 @@ public class Main {
         
         ArrayList<Cliente> clientes = new ArrayList<Cliente>();
 
-        Cliente cliente1 = new Cliente("Arturo", 51.21, null);
-        Cliente cliente2 = new Cliente("Adolfo", 41.32, null);
-        Cliente cliente3 = new Cliente("Juan", 99.12, libros);
-        Cliente cliente4 = new Cliente("Jose", 15.21, null);
+        Cliente cliente1 = new Cliente("Arturo", 35.21, null);
+        Cliente cliente2 = new Cliente("Adolfo", 4.32, null);
+        Cliente cliente3 = new Cliente("Juan", 79.12, libros);
+        Cliente cliente4 = new Cliente("Jose", 57.21, null);
 
         clientes.add(cliente1);
         clientes.add(cliente2);
         clientes.add(cliente3);
         clientes.add(cliente4);
 
-        System.out.println("### Bienvenido a erase una vez ###");
+        System.out.println("### Bienvenido a Erase una vez ###");
         System.out.println("1. Ver libros");
         System.out.println("2. Ver clientes");
         System.out.println("3. Buscar libros");
@@ -58,16 +58,37 @@ public class Main {
             System.out.println("1. Nombre");
             System.out.println("2. Autor");
             System.out.println("3. Categoria");
-
             int seleccion = sc.nextInt();
-            System.out.println(libro1.listar(seleccion));
+
+            // libros.listar(seleccion);
 
         } else if (opcion == 4) {
+            int i = 1;
+            for(Cliente c : clientes) {
+                System.out.println(i++ + ". " + c);
+            }
+
+            System.out.println("Elija un comprador: ");
+            int comprador = sc.nextInt();
+
+            int j = 1;
+            for(Libro l : libros) {
+                System.out.println(j++ + ". " + l);
+            }
+
+            System.out.println("Elija un libro: ");
+            int libroCompra = sc.nextInt();
+            
+            if (clientes.get(comprador - 1).getDinero() > libros.get(libroCompra - 1).getPrecio() && libros.get(libroCompra - 1).getCantidad() > libros.get(libroCompra - 1).getCantidad()) {
+                System.out.println("Comprado !");
+            } else {
+                System.out.println("Error en la compra");
+            }
 
         } else if (opcion == 5) {
-
+            // addLibro();
         } else if (opcion == 6) {
-
+            //  addCliente();
         }  else if (opcion == 0) {
             
         } else {
@@ -75,3 +96,4 @@ public class Main {
         }
     }
 }
+
