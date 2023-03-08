@@ -81,7 +81,7 @@ public class Main {
                 System.out.println("Elija un libro: ");
                 int libroCompra = sc.nextInt();
                 
-                if (clientes.get(comprador - 1).getDinero() > libros.get(libroCompra - 1).getPrecio() && libros.get(libroCompra - 1).getCantidad() > libros.get(libroCompra - 1).getCantidad()) {
+                if (clientes.get(comprador - 1).getDinero() > libros.get(libroCompra - 1).getPrecio() && libros.get(libroCompra - 1).getCantidad() > 0) {
                     System.out.println("Comprado !");
                     // venderLibro(libros.get(libroCompra - 1), clientes.get(comprador - 1));
                 } else {
