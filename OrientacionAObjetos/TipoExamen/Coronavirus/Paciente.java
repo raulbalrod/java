@@ -22,22 +22,40 @@ public class Paciente extends Persona {
     
     // Metodos
     public String enfermar(Enfermedad enfermedad) {
+        String result = "";
         enfermedades.add(enfermedad);
 
-        return "Se ha enfermado de: " + enfermedad;
+        if (enfermedad.getCodigo() == 1) {
+            result += "Se ha contagiado del Coronavirus.";
+        } else if (enfermedad.getCodigo() == 2) {
+            result += "Se ha contagiado de un Resfriado.";
+        } else if(enfermedad.getCodigo() == 3) {
+            result += "Se ha contagiado de la Gripe.";
+        }
+
+        return result;
     }
 
     public String curarse(Enfermedad enfermedad) {
+        String result = "";
         enfermedades.remove(enfermedad);
 
-        return "Se ha curado de: " + enfermedad;
+        if (enfermedad.getCodigo() == 1) {
+            result += "Se ha curado del Coronavirus.";
+        } else if (enfermedad.getCodigo() == 2) {
+            result += "Se ha curado de un Resfriado.";
+        } else if(enfermedad.getCodigo() == 3) {
+            result += "Se ha curado de la Gripe.";
+        }
+
+        return result;
     }
     
     // toString
     @Override
     public String toString() {
         return 
-        "Sanitario: " + this.enfermedades + " - " +
+        "Paciente: " + this.enfermedades + " - " +
         super.getNombre() + " - " +
         super.getEdad() + " - " +
         super.getSexo() + ". " 
