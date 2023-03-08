@@ -7,12 +7,18 @@ public class Cliente {
     private String nombre;
     private ArrayList<Libro> libros;
     private double dinero;
+    private int cantidad;
     
     // Constructor
     public Cliente(String nombre, double dinero, ArrayList<Libro> libros ) {
         this.nombre = nombre;
         this.dinero = dinero;
         this.libros = libros;
+    }
+
+    public Cliente(String nombre, int cantidad, double dinero) {
+        this.nombre = nombre;
+        this.dinero = dinero;
     }
 
     // Getters & setters
