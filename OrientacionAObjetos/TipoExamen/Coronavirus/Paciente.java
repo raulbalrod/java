@@ -26,14 +26,18 @@ public class Paciente extends Persona {
         enfermedades.add(enfermedad);
 
         if (enfermedad.getCodigo() == 1) {
-            result += "Se ha contagiado del Coronavirus.";
+            result += "Se ha enfermado del Coronavirus.";
         } else if (enfermedad.getCodigo() == 2) {
-            result += "Se ha contagiado de un Resfriado.";
+            result += "Se ha enfermado de un Resfriado.";
         } else if(enfermedad.getCodigo() == 3) {
-            result += "Se ha contagiado de la Gripe.";
+            result += "Se ha enfermado de la Gripe.";
         }
 
         return result;
+    }
+
+    public void saludar(Paciente persona) {
+        System.out.println("Hola mi nombre es: " + persona.getNombre());
     }
 
     public String curarse(Enfermedad enfermedad) {

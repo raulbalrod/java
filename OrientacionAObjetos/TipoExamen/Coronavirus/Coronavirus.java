@@ -1,5 +1,7 @@
 package TipoExamen.Coronavirus;
 
+import java.util.ArrayList;
+
 public class Coronavirus implements Enfermedad {
     // Variables
     private int codigo = 1;
@@ -24,10 +26,17 @@ public class Coronavirus implements Enfermedad {
         return this.curable;
     }
 
-    public void contagiar(Paciente paciente, Enfermedad enfermedad) {
-        if (paciente.getEnfermedades() != null) {
-            paciente.enfermar(enfermedad);
-        }
+    @Override
+    public void contagiar(Paciente paciente, ArrayList<Enfermedad> enfermedades, Enfermedad enfermedad) {
+        enfermedades.add(enfermedad);
+    }
+
+    @Override
+    // toString
+    public String toString() {
+        return "    * Coronavirus, codigo -> " + this.codigo 
+        + ", no curable "
+        ;
     }
 
 }

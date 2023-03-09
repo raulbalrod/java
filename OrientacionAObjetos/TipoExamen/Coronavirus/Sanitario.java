@@ -25,20 +25,39 @@ public class Sanitario extends Persona {
         for(Enfermedad e : persona.getEnfermedades()) {
             if(e.getCodigo() == 1) {
                 curable = false;
+                System.out.println(persona.getNombre() + ", te has contagiado de Coronavirus");
             } else if (e.getCodigo() == 2) {
                 curable = true;
+                System.out.println(persona.getNombre() + ", te has contagiado de Resfriado");
             } else if (e.getCodigo() == 3) {
                 curable = true;
+                System.out.println(persona.getNombre() + ", te has contagiado de Gripe");
             } 
         }
+    }
+    
+    public void saludar(Persona persona) {
+        System.out.println("Hola soy " + persona.getNombre());
     }
 
     public void curar(Paciente persona, Enfermedad enfermedad) {
             if (enfermedad.isCurable()) {
                 if(persona.getEnfermedades().contains(enfermedad)) {
                     persona.getEnfermedades().remove(enfermedad);
+
+                    if (enfermedad.getCodigo() == 1) {
+                        System.out.print (persona.getNombre() + " no te puedes curar de Coronavirus. \n");
+
+                    } else if (enfermedad.getCodigo() == 2) {
+                        System.out.print (persona.getNombre() + " te has curado de un Resfriado. \n");
+
+                    } else {
+                        System.out.print (persona.getNombre() + " te has curado de Gripe. \n");
+                    }
                 }
-            }   
+            }  else {
+                persona.getEnfermedades();
+            } 
         
     }
 

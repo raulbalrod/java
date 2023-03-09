@@ -1,12 +1,14 @@
 package TipoExamen.Coronavirus;
 
+import java.util.ArrayList;
+
 public class Gripe implements Enfermedad {
     // Variables
     private int codigo = 3;
     private boolean curable;
 
     // Constructor
-    public Gripe(int codigo, boolean curable) {
+    public Gripe(int codigo) {
         this.codigo = codigo;
         this.curable = true;
     }
@@ -24,9 +26,14 @@ public class Gripe implements Enfermedad {
         return this.curable;
     }
 
-    public void contagiar(Paciente paciente, Enfermedad enfermedad) {
-        if (paciente.getEnfermedades() != null) {
-            paciente.enfermar(enfermedad);
-        }
+    public void contagiar(Paciente paciente, ArrayList<Enfermedad> enfermedades, Enfermedad enfermedad) {
+        enfermedades.add(enfermedad);
+    }
+
+    // toString
+    public String toString() {
+        return "    * Gripe, codigo -> " + this.codigo 
+        + ", curable "
+        ;
     }
 }

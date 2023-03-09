@@ -4,19 +4,39 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
+        ArrayList<Enfermedad> enfermedadesPaciente1 = new ArrayList<Enfermedad>();
+        ArrayList<Enfermedad> enfermedadesPaciente2 = new ArrayList<Enfermedad>();
+
         Enfermedad coronavirus = new Coronavirus(1);
-        Enfermedad resfriado = new Coronavirus(2);
-        Enfermedad gripe = new Coronavirus(3);
+        Enfermedad resfriado = new Resfriado(2);
+        Enfermedad gripe = new Gripe(3);
 
-        ArrayList<Enfermedad> enfermedades = new ArrayList<Enfermedad>();
+        ArrayList<Persona> personas = new ArrayList<Persona>();
 
-        Persona persona1 = new Paciente("Jose", 9, 'h', null);
-        Persona persona2 = new Paciente("Juan", 54, 'h', null);
-        Persona persona3 = new Sanitario("Maria", 32, 'm', "Enfermera");
+        Paciente persona1 = new Adulto("Jose", 43, 'H', enfermedadesPaciente1);
+        Paciente persona2 = new Anciano("David", 63, 'H', enfermedadesPaciente2);
+        Sanitario persona3 = new Sanitario("Maria", 32, 'M', "Enfermera");
+
+        personas.add(persona1);
+        personas.add(persona2);
+        personas.add(persona3);
     
-        saludar(persona1);
-        System.out.println(persona1);
-        System.out.println(persona2);
-        System.out.println(persona3);
+        // Saludar
+        persona2.saludar(persona1);
+
+        // Contagio
+        coronavirus.contagiar(persona1, enfermedadesPaciente1, coronavirus);
+
+        for(Enfermedad e : enfermedadesPaciente1) {
+            System.out.print(e);
+        }
+
+        System.out.println();
+
+        // Diagnostico
+        persona3.diagnosticar(persona1);
+
+        // Cura
+        persona3.curar(persona1, coronavirus);
     }
 }
