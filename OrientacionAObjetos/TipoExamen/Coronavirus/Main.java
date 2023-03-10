@@ -20,7 +20,11 @@ public class Main {
         personas.add(persona1);
         personas.add(persona2);
         personas.add(persona3);
-    
+
+        for(Persona p : personas) {
+            System.out.println(p);
+        }
+
         // Saludar
         persona2.saludar(persona1);
 
