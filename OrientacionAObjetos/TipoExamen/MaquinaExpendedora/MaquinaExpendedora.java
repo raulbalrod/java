@@ -98,7 +98,7 @@ public class MaquinaExpendedora {
         System.out.println("Introduzca una opcion:");
         int eleccion = sc.nextInt();
         
-        if(eleccion == 1 || eleccion == 2) {
+        if(eleccion == 1) {
             System.out.println("Nombre: ");
             String nombre = sc.nextLine();
 
@@ -110,7 +110,19 @@ public class MaquinaExpendedora {
 
             articulos.add(new Tabaco(nombre, codigo, precio));
 
-        } else if(eleccion == 3) {
+        } else if (eleccion == 2) {
+            System.out.println("Nombre: ");
+            String nombre = sc.nextLine();
+
+            System.out.println("Codigo: ");
+            String codigo = sc.nextLine();
+
+            System.out.println("Precio: ");
+            double precio = sc.nextDouble();
+
+            articulos.add(new Tabaco(nombre, codigo, precio));
+        } 
+        else if(eleccion == 3) {
             System.out.println("Nombre: ");
             String nombre = sc.nextLine();
 
@@ -163,13 +175,17 @@ public class MaquinaExpendedora {
     public void actualizarArticulos() {
         for(Articulo a : articulos) {
             if(a instanceof Bebida) {
-                
+                Bebida b = (Bebida)a;
+            } else if(a instanceof Comida) {
+                Comida c = (Comida)a;
             }
         }
     }
 
     public void comprobarArticulos() {
-
+        for(Articulo a : articulos) {
+            
+        }
     }
     
 }
