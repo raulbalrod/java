@@ -65,7 +65,7 @@ public class Cliente {
         return 
         "Cliente: \n" 
         + "nombre -> " + this.nombre + ", " 
-        + "libros -> " + this.libros + ", " 
+        + "libros -> " + this.libros.size() + ", " 
         + "dinero -> " + this.dinero + ". ";
     }
 }

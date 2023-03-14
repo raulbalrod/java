@@ -1,5 +1,6 @@
 package TipoExamen.Libreria;
 
+import java.sql.Array;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -42,24 +43,24 @@ public class Tienda {
     public void verClientes() {
         System.out.println("Lista de clientes:");
         for (Cliente c : clientes) {
-            System.out.println(c.getNombre());
+            System.out.println(c);
         }
     }
 
     public void listar() {
         System.out.println("Lista de libros:");
         for (Libro l : libros) {
-            System.out.println(l.getNombre());
+            System.out.println(l);
         }
     }
 
     public void listar(int opcion) {    
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Introduzca el término de búsqueda:");
+        System.out.println("Introduzca el termino de busqueda:");
         String termino = sc.nextLine();
 
-        System.out.println("Libros que coinciden con la búsqueda:");
+        System.out.println("Libros que coinciden con la busqueda:");
         for (Libro l : libros) {
             if (opcion == 1 && l.getNombre().toLowerCase().contains(termino.toLowerCase())) {
                 System.out.println("- " + l.getNombre());
@@ -99,19 +100,21 @@ public class Tienda {
     public void addCliente() {
         Scanner sc = new Scanner(System.in);
 
+        ArrayList<Libro> librosCliente = new ArrayList<Libro>();
+
         System.out.println("Introduzca el nombre del cliente:");
         String nombre = sc.nextLine();
 
         System.out.println("Introduzca la cantidad de dinero del cliente:");
         double dinero = sc.nextDouble();
         
-        Cliente newCliente = new Cliente(nombre, dinero, libros);
+        Cliente newCliente = new Cliente(nombre, dinero, librosCliente);
 
         clientes.add(newCliente);
     }
 
-    public void venderLibro(Libro libro, Cliente cliente) {
-        if (libro.comprar(libros.size()) != null) {
+    public void venderLibro(Libro libro, Cliente cliente, int unidadesCompradas) {
+        if (libro.comprar(unidadesCompradas) != null) {
             cliente.addLibro(libro);
             cliente.pagarLibro(libro.getPrecio());
             System.out.println("El libro " + libro.getNombre() + " se ha vendido a " + cliente.getNombre() + ".");
