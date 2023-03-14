@@ -11,5 +11,10 @@ public class Juguete extends Articulo {
     public String usar() {
         return "Juego con mi " + getNombre() + ".";
     }
-    
+
+    // toString
+    @Override
+    public String toString() {
+        return "Juguete -> " + getNombre() + ", " + getCodigo() + ", " + getPrecio() + ".";
+    }
 }

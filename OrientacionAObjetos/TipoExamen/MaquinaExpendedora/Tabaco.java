@@ -31,4 +31,10 @@ public class Tabaco extends Articulo {
         }
     }
 
+    // toString
+    @Override
+    public String toString() {
+        return "Juguete -> " + getNombre() + ", " + getCodigo() + ", " + getPrecio() + "," + this.unidades + ".";
+    }
+
 }

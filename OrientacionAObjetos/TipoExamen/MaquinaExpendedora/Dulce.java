@@ -38,12 +38,12 @@ public class Dulce extends Comida {
             resultado += "no caducado.";
         }
 
-        return "Datos del producto -> " 
+        return "Dulce -> " 
         + getNombre() + "- " 
         + getCodigo() + "- " 
         + getPrecio() + "- "
-        + ", " + getNombre() + "esta " + resultado + "-> Esto engorda "
-        + this.grasas + "gramos."
+        + ", " + getNombre() + " esta " + resultado + "-> Esto engorda "
+        + this.grasas + " gramos."
         ;
     }
     

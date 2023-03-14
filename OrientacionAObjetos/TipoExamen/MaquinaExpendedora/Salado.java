@@ -35,12 +35,12 @@ public class Salado extends Comida {
             resultado += "no caducado.";
         }
 
-        return "Datos del producto -> " 
+        return "Salado -> " 
         + getNombre() + "- " 
         + getCodigo() + "- " 
         + getPrecio() + "- "
-        + ", " + getNombre() + "esta " + resultado + "-> Esto nutre "
-        + this.nutrientes + "gramos."
+        + ", " + getNombre() + " esta " + resultado + "-> Esto nutre "
+        + this.nutrientes + " gramos."
         ;
     }
 }

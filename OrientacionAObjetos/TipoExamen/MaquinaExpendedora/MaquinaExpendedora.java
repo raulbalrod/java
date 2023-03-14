@@ -29,7 +29,9 @@ public class MaquinaExpendedora {
         articulos.add(new Bebida("bebida", "B", 1.23, 0, 0));
     }
 
-    public void start(int eleccion) {
+    public void start() {
+        int eleccion = 1;
+        
         do {
             menu();
         } while (eleccion != 0);
@@ -81,7 +83,10 @@ public class MaquinaExpendedora {
         if(dineroComprador >= articulos.get(articuloCompra - 1).getPrecio()) {
             double aux = articulos.get(articuloCompra - 1).getPrecio() - dineroComprador;
             articulos.remove(articulos.get(articuloCompra - 1));
-            articulos.get(articuloCompra - 1).usar();
+
+            System.out.println(articulos.get(articuloCompra - 1).usar());
+        } else {
+            System.out.println("No tienes dinero suficiente.");
         }
     }
 
@@ -184,7 +189,15 @@ public class MaquinaExpendedora {
 
     public void comprobarArticulos() {
         for(Articulo a : articulos) {
-            
+            if(a instanceof Bebida) {
+                Bebida b = (Bebida)a;
+                b.caducar();
+
+            } else if(a instanceof Comida) {
+                Comida c = (Comida)a;
+                c.caducar();
+                
+            }
         }
     }
     
