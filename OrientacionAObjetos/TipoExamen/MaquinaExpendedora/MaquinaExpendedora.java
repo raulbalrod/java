@@ -30,14 +30,15 @@ public class MaquinaExpendedora {
     }
 
     public void start() {
-        int eleccion = 1;
+        int eleccion = -1;
         
         do {
-            menu();
+           eleccion = menu();
         } while (eleccion != 0);
+        System.out.println("Gracias por su compra!");
     } 
     
-    public void menu() {
+    public int menu() {
         Scanner sc = new Scanner(System.in);
 
         System.out.println();
@@ -62,7 +63,11 @@ public class MaquinaExpendedora {
             actualizarArticulos();
         } else if(eleccion == 5) {
             comprobarArticulos();
+            System.out.println("Se han comprobados los articulos");
+            verArticulos(articulos);
         }
+
+        return eleccion;
     }
 
     public void verArticulos(ArrayList<Articulo> articulos) {
