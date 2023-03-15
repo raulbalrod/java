@@ -185,10 +185,15 @@ public class MaquinaExpendedora {
                     articulos.remove(b);
                 }
 
-            } else if(a instanceof Comida) {
-                Comida c = (Comida)a;
-                if (c.isCaducado() == true) {
-                    articulos.remove(c);
+            } else if(a instanceof Salado) {
+                Salado s = (Salado)a;
+                if (s.isCaducado() == true) {
+                    articulos.remove(s);
+                }
+            } else {
+                Dulce d = (Dulce)a;
+                if (d.isCaducado() == true) {
+                    articulos.remove(d);
                 }
             }
         }
@@ -200,10 +205,13 @@ public class MaquinaExpendedora {
                 Bebida b = (Bebida)a;
                 b.caducar();
 
-            } else if(a instanceof Comida) {
-                Comida c = (Comida)a;
-                c.caducar();
+            } else if(a instanceof Salado) {
+                Salado s = (Salado)a;
+                s.caducar();
                 
+            } else {
+                Dulce d = (Dulce)a;
+                d.caducar();
             }
         }
     }
