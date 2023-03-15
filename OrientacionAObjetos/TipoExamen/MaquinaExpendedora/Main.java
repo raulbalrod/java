@@ -7,6 +7,7 @@ public class Main {
         ArrayList<Articulo> articulos = new ArrayList<Articulo>();
         
         MaquinaExpendedora maquina = new MaquinaExpendedora(articulos);
+        
         maquina.load();
 
         maquina.start();

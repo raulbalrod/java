@@ -190,6 +190,7 @@ public class MaquinaExpendedora {
                 if (s.isCaducado() == true) {
                     articulos.remove(s);
                 }
+                
             } else if(a instanceof Dulce) {
                 Dulce d = (Dulce)a;
                 if (d.isCaducado() == true) {
