@@ -82,9 +82,9 @@ public class MaquinaExpendedora {
 
         if(dineroComprador >= articulos.get(articuloCompra - 1).getPrecio()) {
             double aux = articulos.get(articuloCompra - 1).getPrecio() - dineroComprador;
-            articulos.remove(articulos.get(articuloCompra - 1));
-
             System.out.println(articulos.get(articuloCompra - 1).usar());
+
+            articulos.remove(articulos.get(articuloCompra - 1));
         } else {
             System.out.println("No tienes dinero suficiente.");
         }
@@ -105,22 +105,22 @@ public class MaquinaExpendedora {
         
         if(eleccion == 1) {
             System.out.println("Nombre: ");
-            String nombre = sc.nextLine();
+            String nombre = sc.next();
 
             System.out.println("Codigo: ");
-            String codigo = sc.nextLine();
+            String codigo = sc.next();
 
             System.out.println("Precio: ");
             double precio = sc.nextDouble();
 
-            articulos.add(new Tabaco(nombre, codigo, precio));
+            articulos.add(new Juguete(nombre, codigo, precio));
 
         } else if (eleccion == 2) {
             System.out.println("Nombre: ");
-            String nombre = sc.nextLine();
+            String nombre = sc.next();
 
             System.out.println("Codigo: ");
-            String codigo = sc.nextLine();
+            String codigo = sc.next();
 
             System.out.println("Precio: ");
             double precio = sc.nextDouble();
@@ -129,10 +129,10 @@ public class MaquinaExpendedora {
         } 
         else if(eleccion == 3) {
             System.out.println("Nombre: ");
-            String nombre = sc.nextLine();
+            String nombre = sc.next();
 
             System.out.println("Codigo: ");
-            String codigo = sc.nextLine();
+            String codigo = sc.next();
 
             System.out.println("Precio: ");
             double precio = sc.nextDouble();
@@ -144,10 +144,10 @@ public class MaquinaExpendedora {
 
         } else if(eleccion == 4) {
             System.out.println("Nombre: ");
-            String nombre = sc.nextLine();
+            String nombre = sc.next();
 
             System.out.println("Codigo: ");
-            String codigo = sc.nextLine();
+            String codigo = sc.next();
 
             System.out.println("Precio: ");
             double precio = sc.nextDouble();
@@ -159,10 +159,10 @@ public class MaquinaExpendedora {
 
         } else if(eleccion == 5) {
             System.out.println("Nombre: ");
-            String nombre = sc.nextLine();
+            String nombre = sc.next();
 
             System.out.println("Codigo: ");
-            String codigo = sc.nextLine();
+            String codigo = sc.next();
 
             System.out.println("Precio: ");
             double precio = sc.nextDouble();
@@ -181,8 +181,15 @@ public class MaquinaExpendedora {
         for(Articulo a : articulos) {
             if(a instanceof Bebida) {
                 Bebida b = (Bebida)a;
+                if (b.isCaducado() == true) {
+                    articulos.remove(b);
+                }
+
             } else if(a instanceof Comida) {
                 Comida c = (Comida)a;
+                if (c.isCaducado() == true) {
+                    articulos.remove(c);
+                }
             }
         }
     }

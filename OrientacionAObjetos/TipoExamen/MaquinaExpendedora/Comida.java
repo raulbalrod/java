@@ -21,31 +21,32 @@ public abstract class Comida extends Articulo implements Alimento {
     }
 
     public boolean caducar() {
-        int probabilidadCaducar = (int) (Math.random() * 100); 
+        int probabilidadCaducar = (int) (Math.random() * 100);
 
         if (probabilidadCaducar <= 50) {
-            return true;
+            this.caducado = true;
+            return this.caducado;
         } else {
-            return false;
+            this.caducado = false;
+            return this.caducado;
         }
     }
-
     // toString
     @Override
     public String toString() {
         String resultado = "";
 
-        if(isCaducado()) {
+        if(this.caducado == true) {
             resultado += "caducado.";
         } else {
             resultado += "no caducado.";
         }
 
         return "Comida -> " 
-        + getNombre() + "- " 
-        + getCodigo() + "- " 
-        + getPrecio() + "- "
-        + ", " + getNombre() + "esta " + resultado + "."
+        + getNombre() + ", " 
+        + getCodigo() + ", " 
+        + getPrecio() + ", "
+        + ", " + getNombre() + "esta " + resultado
         ;
     }
 

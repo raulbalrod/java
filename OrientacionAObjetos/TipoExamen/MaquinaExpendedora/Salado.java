@@ -36,9 +36,9 @@ public class Salado extends Comida {
         }
 
         return "Salado -> " 
-        + getNombre() + "- " 
-        + getCodigo() + "- " 
-        + getPrecio() + "- "
+        + getNombre() + ", " 
+        + getCodigo() + ", " 
+        + getPrecio() + ", "
         + ", " + getNombre() + " esta " + resultado + "-> Esto nutre "
         + this.nutrientes + " gramos."
         ;

@@ -39,9 +39,9 @@ public class Dulce extends Comida {
         }
 
         return "Dulce -> " 
-        + getNombre() + "- " 
-        + getCodigo() + "- " 
-        + getPrecio() + "- "
+        + getNombre() + ", " 
+        + getCodigo() + ", " 
+        + getPrecio() + ", "
         + ", " + getNombre() + " esta " + resultado + "-> Esto engorda "
         + this.grasas + " gramos."
         ;
