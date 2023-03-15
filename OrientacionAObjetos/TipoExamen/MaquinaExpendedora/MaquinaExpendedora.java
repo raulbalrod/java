@@ -60,7 +60,7 @@ public class MaquinaExpendedora {
         } else if(eleccion == 3) {
             insertarArticulo();
         } else if(eleccion == 4) {
-            actualizarArticulos();
+            actualizarArticulos2();
         } else if(eleccion == 5) {
             comprobarArticulos();
             System.out.println("Se han comprobados los articulos");
@@ -187,19 +187,47 @@ public class MaquinaExpendedora {
             if(a instanceof Bebida) {
                 Bebida b = (Bebida)a;
                 if (b.isCaducado() == true) {
-                    articulos.remove(b);
+                    articulos.remove(a);
                 }
 
             } else if(a instanceof Salado) {
                 Salado s = (Salado)a;
                 if (s.isCaducado() == true) {
-                    articulos.remove(s);
+                    articulos.remove(a);
                 }
                 
             } else if(a instanceof Dulce) {
                 Dulce d = (Dulce)a;
                 if (d.isCaducado() == true) {
-                    articulos.remove(d);
+                    articulos.remove(a);
+                }
+            }
+        }
+    }
+
+    public void actualizarArticulos2() {
+        for(int i = 0; i < articulos.size(); i += 1) {
+            Articulo a = articulos.get(i);
+
+            if(a instanceof Bebida) {
+                Bebida b = (Bebida)a;
+                if (b.isCaducado()) {
+                    articulos.remove(a);
+                    i--;
+                }
+
+            } else if(a instanceof Salado) {
+                Salado s = (Salado)a;
+                if (s.isCaducado()) {
+                    articulos.remove(a);
+                    i--;
+                }
+                
+            } else if(a instanceof Dulce) {
+                Dulce d = (Dulce)a;
+                if (d.isCaducado()) {
+                    i--;
+                    articulos.remove(a);
                 }
             }
         }
