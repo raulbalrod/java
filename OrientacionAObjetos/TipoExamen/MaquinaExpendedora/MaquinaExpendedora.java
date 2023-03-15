@@ -190,7 +190,7 @@ public class MaquinaExpendedora {
                 if (s.isCaducado() == true) {
                     articulos.remove(s);
                 }
-            } else {
+            } else if(a instanceof Dulce) {
                 Dulce d = (Dulce)a;
                 if (d.isCaducado() == true) {
                     articulos.remove(d);
@@ -209,7 +209,7 @@ public class MaquinaExpendedora {
                 Salado s = (Salado)a;
                 s.caducar();
                 
-            } else {
+            } else if(a instanceof Dulce) {
                 Dulce d = (Dulce)a;
                 d.caducar();
             }

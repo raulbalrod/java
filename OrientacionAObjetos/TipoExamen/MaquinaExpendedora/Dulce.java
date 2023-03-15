@@ -19,10 +19,6 @@ public class Dulce extends Comida {
     }
 
     // Metodos
-    public void setCaducado(boolean caducado) {
-        throw new UnsupportedOperationException("Unimplemented method 'setCadudcado'");
-    }
-
     public String usar() {
         return "Me tomo " + getNombre() + "y me nutro " + this.grasas + "gramos.";
     }
@@ -42,7 +38,7 @@ public class Dulce extends Comida {
         + getNombre() + ", " 
         + getCodigo() + ", " 
         + getPrecio() + ", "
-        + ", " + getNombre() + " esta " + resultado + "-> Esto engorda "
+        + getNombre() + " esta " + resultado + "-> Esto engorda "
         + this.grasas + " gramos."
         ;
     }

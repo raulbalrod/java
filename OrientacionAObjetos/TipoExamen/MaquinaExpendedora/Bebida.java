@@ -60,7 +60,7 @@ public class Bebida extends Articulo implements Alimento {
         + getNombre() + ", " 
         + getCodigo() + ", " 
         + getPrecio() + ", "
-        + ", " + getNombre() + " esta " + resultado   
+        + getNombre() + " esta " + resultado   
         ;
     }
     
