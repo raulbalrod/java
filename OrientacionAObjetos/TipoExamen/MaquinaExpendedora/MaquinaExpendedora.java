@@ -181,6 +181,9 @@ public class MaquinaExpendedora {
         for(Articulo a : articulos) {
             if(a instanceof Bebida) {
                 Bebida b = (Bebida)a;
+                if(b.isCaducado()) {
+                    articulos.remove(b);
+                }
             } else if(a instanceof Comida) {
                 Comida c = (Comida)a;
             }
