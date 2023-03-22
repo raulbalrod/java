@@ -16,7 +16,6 @@ public class Bebida extends Articulo implements Alimento {
     // Metodos
     @Override
     public boolean isCaducado() {
-        this.caducado = true;
         return caducado;
     }
 
@@ -50,17 +49,17 @@ public class Bebida extends Articulo implements Alimento {
     public String toString() {
         String resultado = "";
 
-        if(this.caducado == true) {
-            resultado += "caducado.";
+        if(isCaducado()) {
+            resultado += " esta caducado.";
         } else {
-            resultado += "no caducado.";
+            resultado += " no esta caducado.";
         }
 
-        return "Comida -> " 
+        return "Bebida -> " 
         + getNombre() + ", " 
         + getCodigo() + ", " 
         + getPrecio() + ", "
-        + getNombre() + " esta " + resultado   
+        + getNombre() + resultado   
         ;
     }
     

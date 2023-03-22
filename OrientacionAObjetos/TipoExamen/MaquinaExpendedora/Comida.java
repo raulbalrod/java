@@ -12,7 +12,6 @@ public abstract class Comida extends Articulo implements Alimento {
 
     // Metodos
     public boolean isCaducado() {
-        this.caducado = true;
         return caducado;
     }
 
@@ -36,17 +35,17 @@ public abstract class Comida extends Articulo implements Alimento {
     public String toString() {
         String resultado = "";
 
-        if(this.caducado == true) {
-            resultado += "caducado.";
+        if(isCaducado()) {
+            resultado += " esta caducado.";
         } else {
-            resultado += "no caducado.";
+            resultado += " no esta caducado.";
         }
 
         return "Comida -> " 
         + getNombre() + ", " 
         + getCodigo() + ", " 
         + getPrecio() + ", "
-        + ", " + getNombre() + "esta " + resultado
+        + ", " + getNombre() + resultado
         ;
     }
 

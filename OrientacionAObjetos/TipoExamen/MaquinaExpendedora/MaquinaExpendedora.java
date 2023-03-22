@@ -60,7 +60,7 @@ public class MaquinaExpendedora {
         } else if(eleccion == 3) {
             insertarArticulo();
         } else if(eleccion == 4) {
-            actualizarArticulos2();
+            actualizarArticulos();
         } else if(eleccion == 5) {
             comprobarArticulos();
             System.out.println("Se han comprobados los articulos");
@@ -183,49 +183,26 @@ public class MaquinaExpendedora {
     }
 
     public void actualizarArticulos() {
-        for(Articulo a : articulos) {
+        for(int i = 0; i < articulos.size(); i += 1) {
+            Articulo a = articulos.get(i);
+
             if(a instanceof Bebida) {
                 Bebida b = (Bebida)a;
                 if (b.isCaducado() == true) {
                     articulos.remove(a);
+                    i--;
                 }
 
             } else if(a instanceof Salado) {
                 Salado s = (Salado)a;
                 if (s.isCaducado() == true) {
                     articulos.remove(a);
+                    i--;
                 }
                 
             } else if(a instanceof Dulce) {
                 Dulce d = (Dulce)a;
                 if (d.isCaducado() == true) {
-                    articulos.remove(a);
-                }
-            }
-        }
-    }
-
-    public void actualizarArticulos2() {
-        for(int i = 0; i < articulos.size(); i += 1) {
-            Articulo a = articulos.get(i);
-
-            if(a instanceof Bebida) {
-                Bebida b = (Bebida)a;
-                if (b.isCaducado()) {
-                    articulos.remove(a);
-                    i--;
-                }
-
-            } else if(a instanceof Salado) {
-                Salado s = (Salado)a;
-                if (s.isCaducado()) {
-                    articulos.remove(a);
-                    i--;
-                }
-                
-            } else if(a instanceof Dulce) {
-                Dulce d = (Dulce)a;
-                if (d.isCaducado()) {
                     i--;
                     articulos.remove(a);
                 }

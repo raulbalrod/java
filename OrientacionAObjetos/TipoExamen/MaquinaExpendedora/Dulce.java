@@ -29,16 +29,16 @@ public class Dulce extends Comida {
         String resultado = "";
 
         if(isCaducado()) {
-            resultado += "caducado.";
+            resultado += " esta caducado.";
         } else {
-            resultado += "no caducado.";
+            resultado += " no esta caducado.";
         }
 
         return "Dulce -> " 
         + getNombre() + ", " 
         + getCodigo() + ", " 
         + getPrecio() + ", "
-        + getNombre() + " esta " + resultado + "-> Esto engorda "
+        + getNombre() + resultado + "-> Esto engorda "
         + this.grasas + " gramos."
         ;
     }
