@@ -30,14 +30,15 @@ public class MaquinaExpendedora {
     }
 
     public void start() {
-        int eleccion = 1;
+        int eleccion = -1;
         
         do {
-            menu();
+           eleccion = menu();
         } while (eleccion != 0);
+        System.out.println("Gracias por su compra!");
     } 
     
-    public void menu() {
+    public int menu() {
         Scanner sc = new Scanner(System.in);
 
         System.out.println();
@@ -62,7 +63,11 @@ public class MaquinaExpendedora {
             actualizarArticulos();
         } else if(eleccion == 5) {
             comprobarArticulos();
+            System.out.println("Se han comprobados los articulos");
+            verArticulos(articulos);
         }
+
+        return eleccion;
     }
 
     public void verArticulos(ArrayList<Articulo> articulos) {
@@ -82,9 +87,9 @@ public class MaquinaExpendedora {
 
         if(dineroComprador >= articulos.get(articuloCompra - 1).getPrecio()) {
             double aux = articulos.get(articuloCompra - 1).getPrecio() - dineroComprador;
-            articulos.remove(articulos.get(articuloCompra - 1));
-
             System.out.println(articulos.get(articuloCompra - 1).usar());
+
+            articulos.remove(articulos.get(articuloCompra - 1));
         } else {
             System.out.println("No tienes dinero suficiente.");
         }
@@ -105,22 +110,22 @@ public class MaquinaExpendedora {
         
         if(eleccion == 1) {
             System.out.println("Nombre: ");
-            String nombre = sc.nextLine();
+            String nombre = sc.next();
 
             System.out.println("Codigo: ");
-            String codigo = sc.nextLine();
+            String codigo = sc.next();
 
             System.out.println("Precio: ");
             double precio = sc.nextDouble();
 
-            articulos.add(new Tabaco(nombre, codigo, precio));
+            articulos.add(new Juguete(nombre, codigo, precio));
 
         } else if (eleccion == 2) {
             System.out.println("Nombre: ");
-            String nombre = sc.nextLine();
+            String nombre = sc.next();
 
             System.out.println("Codigo: ");
-            String codigo = sc.nextLine();
+            String codigo = sc.next();
 
             System.out.println("Precio: ");
             double precio = sc.nextDouble();
@@ -129,10 +134,10 @@ public class MaquinaExpendedora {
         } 
         else if(eleccion == 3) {
             System.out.println("Nombre: ");
-            String nombre = sc.nextLine();
+            String nombre = sc.next();
 
             System.out.println("Codigo: ");
-            String codigo = sc.nextLine();
+            String codigo = sc.next();
 
             System.out.println("Precio: ");
             double precio = sc.nextDouble();
@@ -144,10 +149,10 @@ public class MaquinaExpendedora {
 
         } else if(eleccion == 4) {
             System.out.println("Nombre: ");
-            String nombre = sc.nextLine();
+            String nombre = sc.next();
 
             System.out.println("Codigo: ");
-            String codigo = sc.nextLine();
+            String codigo = sc.next();
 
             System.out.println("Precio: ");
             double precio = sc.nextDouble();
@@ -159,10 +164,10 @@ public class MaquinaExpendedora {
 
         } else if(eleccion == 5) {
             System.out.println("Nombre: ");
-            String nombre = sc.nextLine();
+            String nombre = sc.next();
 
             System.out.println("Codigo: ");
-            String codigo = sc.nextLine();
+            String codigo = sc.next();
 
             System.out.println("Precio: ");
             double precio = sc.nextDouble();
@@ -178,14 +183,36 @@ public class MaquinaExpendedora {
     }
 
     public void actualizarArticulos() {
-        for(Articulo a : articulos) {
+        for(int i = 0; i < articulos.size(); i += 1) {
+            Articulo a = articulos.get(i);
+
             if(a instanceof Bebida) {
                 Bebida b = (Bebida)a;
+
                 if(b.isCaducado()) {
                     articulos.remove(b);
                 }
             } else if(a instanceof Comida) {
                 Comida c = (Comida)a;
+
+                if (b.isCaducado() == true) {
+                    articulos.remove(a);
+                    i--;
+                }
+
+            } else if(a instanceof Salado) {
+                Salado s = (Salado)a;
+                if (s.isCaducado() == true) {
+                    articulos.remove(a);
+                    i--;
+                }
+                
+            } else if(a instanceof Dulce) {
+                Dulce d = (Dulce)a;
+                if (d.isCaducado() == true) {
+                    i--;
+                    articulos.remove(a);
+                }
             }
         }
     }
@@ -196,10 +223,13 @@ public class MaquinaExpendedora {
                 Bebida b = (Bebida)a;
                 b.caducar();
 
-            } else if(a instanceof Comida) {
-                Comida c = (Comida)a;
-                c.caducar();
+            } else if(a instanceof Salado) {
+                Salado s = (Salado)a;
+                s.caducar();
                 
+            } else if(a instanceof Dulce) {
+                Dulce d = (Dulce)a;
+                d.caducar();
             }
         }
     }

@@ -30,16 +30,16 @@ public class Salado extends Comida {
         String resultado = "";
 
         if(isCaducado()) {
-            resultado += "caducado.";
+            resultado += " esta caducado.";
         } else {
-            resultado += "no caducado.";
+            resultado += " no esta caducado.";
         }
 
         return "Salado -> " 
-        + getNombre() + "- " 
-        + getCodigo() + "- " 
-        + getPrecio() + "- "
-        + ", " + getNombre() + " esta " + resultado + "-> Esto nutre "
+        + getNombre() + ", " 
+        + getCodigo() + ", " 
+        + getPrecio() + ", "
+        + getNombre() + resultado + "-> Esto nutre "
         + this.nutrientes + " gramos."
         ;
     }

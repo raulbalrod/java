@@ -12,7 +12,6 @@ public abstract class Comida extends Articulo implements Alimento {
 
     // Metodos
     public boolean isCaducado() {
-        this.caducado = true;
         return caducado;
     }
 
@@ -21,31 +20,32 @@ public abstract class Comida extends Articulo implements Alimento {
     }
 
     public boolean caducar() {
-        int probabilidadCaducar = (int) (Math.random() * 100); 
+        int probabilidadCaducar = (int) (Math.random() * 100);
 
         if (probabilidadCaducar <= 50) {
-            return true;
+            this.caducado = true;
+            return this.caducado;
         } else {
-            return false;
+            this.caducado = false;
+            return this.caducado;
         }
     }
-
     // toString
     @Override
     public String toString() {
         String resultado = "";
 
         if(isCaducado()) {
-            resultado += "caducado.";
+            resultado += " esta caducado.";
         } else {
-            resultado += "no caducado.";
+            resultado += " no esta caducado.";
         }
 
         return "Comida -> " 
-        + getNombre() + "- " 
-        + getCodigo() + "- " 
-        + getPrecio() + "- "
-        + ", " + getNombre() + "esta " + resultado + "."
+        + getNombre() + ", " 
+        + getCodigo() + ", " 
+        + getPrecio() + ", "
+        + ", " + getNombre() + resultado
         ;
     }
 
