@@ -195,7 +195,7 @@ public class MaquinaExpendedora {
             } else if(a instanceof Comida) {
                 Comida c = (Comida)a;
 
-                if (b.isCaducado() == true) {
+                if (c.isCaducado() == true) {
                     articulos.remove(a);
                     i--;
                 }
